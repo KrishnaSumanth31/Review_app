@@ -1,5 +1,7 @@
 Rails.application.routes.draw do  
-  devise_for :users
+	  devise_for :users
+  	 
+
 
   resources :movies do
   	collection do
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
   	end
   	resources :reviews, except: [:show, :index]
   end
+root 'movies#index'
 
-  root 'movies#index'
+  
 end
